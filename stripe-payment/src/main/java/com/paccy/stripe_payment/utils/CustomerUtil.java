@@ -15,7 +15,7 @@ public class CustomerUtil {
                         .setQuery("email:'"+ email + "'")
                         .build();
         CustomerSearchResult result=Customer.search(params);
-        return  !result.getData().isEmpty() ? result.getData().getFirst() :null ;
+        return  !result.getData().isEmpty() ? result.getData().get(0) :null ;
     }
 
     public static Customer findOrCreateCustomer(String email,String name) throws StripeException{
@@ -36,7 +36,7 @@ public class CustomerUtil {
 
         }
         else {
-            customer= result.getData().getFirst();
+            customer= result.getData().get(0);
         }
         return customer;
     }
