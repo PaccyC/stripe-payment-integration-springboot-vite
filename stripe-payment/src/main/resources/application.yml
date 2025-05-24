@@ -1,0 +1,35 @@
+spring:
+  application:
+    name: stripe-payment
+
+  devtools:
+    restart:
+      enabled: true
+    livereload:
+      enabled: true
+
+  datasource:
+    url: jdbc:postgresql://localhost:5432/${DATABASE_NAME}
+    username: ${DATABASE_USER}
+    password: ${DATABASE_PASSWORD}
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+
+#  flyway:
+#    url: jdbc:postgresql://localhost:5432/${DATABASE_NAME}
+#    user: ${DATABASE_USER}
+#    password: ${DATABASE_PASSWORD}
+#    driver-class-name: org.postgresql.Driver
+
+server:
+  port: 8000
+
+stripe:
+  publishableKey: ${STRIPE_PUBLISHABLE_KEY}
+  secretKey: ${STRIPE_SECRET_KEY}
+
+client:
+  baseUrl: ${CLIENT_BASE_URL}
