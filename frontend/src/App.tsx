@@ -4,6 +4,7 @@ import Home from './pages/Home'
 import HostedCheckout from './pages/HostedCheckout'
 import Success from './pages/Success'
 import Failure from './pages/Failure'
+import IntegratedCheckout from './pages/IntegratedCheckout'
 
 function App() {
 
@@ -30,6 +31,12 @@ function App() {
             path: '/failure',
             element: (
                 <Failure/>
+            )
+        },
+         {
+            path: '/integrated-checkout',
+            element: (
+                <IntegratedCheckout/>
             )
         },
   ])
